@@ -1,0 +1,42 @@
+nav {
+    display: flex;
+    background-color: #f2f2f2;
+    justify-content: space-evenly;
+}
+nav li {
+    list-style-type: none;
+    margin: 0 10px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: black;
+}
+div.burger {
+    width: 50px;
+    height: 50px;
+    background-image: url(image/open.webp);
+    background-size: cover;
+    display: none;
+}
+div.open {
+    background-image: url(image/close.webp);
+}
+
+@media screen and (max-width: 600px) {
+    nav li {
+        display: none;
+    }
+    nav.nav-open li {
+        display: block;
+    }
+    div.burger {
+        display: block;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    
+}

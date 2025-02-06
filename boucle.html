@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boucle Bonjour</title>
+</head>
+<body>
+    <input type="text" id="inputWord" placeholder="Tapez un mot">
+    <button id="btn">Ajouter le mot</button>
+    <div id="messages"></div>
+
+    <script>
+        let count = 1; // Initialise un compteur à 1.
+        const btn = document.getElementById('btn'); // Récupère l'élément bouton par son ID.
+        const inputWord = document.getElementById('inputWord'); // Récupère l'élément champ de texte par son ID.
+        const messages = document.getElementById('messages'); // Récupère l'élément div où les messages seront affichés par son ID.
+
+        btn.addEventListener('click', function() { // Ajoute un écouteur d'événement au bouton pour détecter les clics.
+            const word = inputWord.value.trim(); // Récupère la valeur du champ de texte et supprime les espaces en début et fin.
+            if (word) { // Vérifie si le champ de texte n'est pas vide après suppression des espaces.
+                const message = document.createElement('p'); // Crée un nouvel élément paragraphe.
+                message.textContent = `${count}. ${word}`; // Définit le contenu du paragraphe avec le compteur et le mot saisi.
+                messages.appendChild(message); // Ajoute le paragraphe à la div des messages.
+                count++; // Incrémente le compteur.
+                inputWord.value = ''; // Vide le champ de texte.
+            }
+        });
+    </script>
+</body>
+</html>

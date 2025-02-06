@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juste Prix</title>
+</head>
+<body>
+    <p id="message"></p>
+    <input type="number" id="prix" placeholder="Entrez votre prix">
+    <button id="btn">Essayer</button>
+
+    <script>
+        const prixJuste = Math.floor(Math.random() * 100) + 1;
+        const btn = document.getElementById('btn');
+        const message = document.getElementById('message');
+        const prix = document.getElementById('prix');
+
+        btn.addEventListener('click', function() {
+            if (prix.value < prixJuste) {
+                message.textContent = 'C\'est plus';
+            } else if (prix.value > prixJuste) {
+                message.textContent = 'C\'est moins';
+            } else {
+                message.textContent = 'Bravo vous avez trouvé le juste prix';
+            }
+        });
+        
+    </script>
+</body>
+</html>

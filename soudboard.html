@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundboard</title>
+</head>
+<body>
+    <h1>Soundboard</h1>
+    <button onclick="playSound('sound1')">Son Batterie</button>
+    <audio id="sound1" src="sound/pew.mp3"></audio> 
+    <button onclick="playSound('sound2')">Son Fusil</button>
+    <audio id="sound2" src="sound/ouho-maes-mp3cut.mp3"></audio>
+    <script>
+        function playSound(id) {
+            const audio = document.getElementById(id);
+            audio.currentTime = 0;
+            audio.play();
+        }
+    </script>
+</body>
+</html>
+"
